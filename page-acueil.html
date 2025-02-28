@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jeu pour Gagner un Ticket de Film</title>
+    <link rel="stylesheet" href="style-inscription.css" />
+  </head>
+  <body>
+    <!-- Page d'Accueil -->
+    <section id="accueil">
+      <div class="accueil-content">
+        <h1>Bienvenue sur notre jeu</h1>
+        <p>Gagnez un ticket pour voir votre film préféré !</p>
+        <button id="btnCommencer">Commencer</button>
+      </div>
+    </section>
+
+    <!-- Section Identification (Cachée au début) -->
+    <section id="identification">
+      <div class="identification-content">
+        <h2>Identifiez-vous</h2>
+        <form action="traitement.php" id="formIdentification">
+          <input type="text" id="nom" placeholder="Nom" required />
+          <input type="text" id="prenom" placeholder="Prénom" required />
+          <input
+            type="email"
+            id="email"
+            placeholder="Adresse e-mail"
+            required
+          />
+          <input
+            type="password"
+            id="password"
+            placeholder="Mot de passe"
+            required
+          />
+          <button type="submit" id="btnValider">Valider</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Section Films (Cachée au début) -->
+    <section id="films">
+      <h2>Choisissez un film</h2>
+
+      <!-- Swiper Container -->
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img
+              src="assets/Design-sans-titre-2024-02-14T171828.855-930x620.jpg"
+              alt="Film 1"
+              class="film"
+              data-film="Les quatre fantatstiques"
+            />
+          </div>
+          <div class="swiper-slide">
+            <img
+              src="assets/61M9BZT67uL._AC_UF10001000_QL80_.jpg"
+              alt="Film 2"
+              class="film"
+              data-film="Deadpool 3"
+            />
+          </div>
+          <div class="swiper-slide">
+            <img
+              src="assets/MAIN-AVENGERS-SECRET-WARS-new.jpg"
+              alt="Film 3"
+              class="film"
+              data-film="Avengers secret wars"
+            />
+          </div>
+        </div>
+
+        <!-- Flèches de navigation -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+
+        <!-- Pagination -->
+        <div class="swiper-pagination"></div>
+      </div>
+
+      <!-- Bouton Jouer -->
+      <button id="btnJouer" disabled>Jouer</button>
+    </section>
+
+    <audio id="musique" autoplay loop>
+      <source
+        src="sons/doctor-strange-magic-circle-shield-sound-effect-38335.mp3"
+        type="audio/mp3"
+      />
+    </audio>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="inscription.js"></script>
+  </body>
+</html>

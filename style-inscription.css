@@ -1,0 +1,261 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: "Arial", sans-serif;
+  box-sizing: border-box;
+  color: white;
+  background-color: #111; /* Fond sombre général */
+}
+
+/* ================= PAGE D'ACCUEIL ================= */
+#accueil {
+  height: 100vh;
+  background-image: url("assets/films-marvel-1400x800.jpg"); /* Remplace avec ton image */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Effet de flou et d'obscurcissement */
+#accueil::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(5px);
+  z-index: 1;
+}
+
+/* Contenu de la page d'accueil */
+.accueil-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.accueil-content h1 {
+  font-size: 50px;
+  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8);
+  margin-bottom: 20px;
+}
+
+.accueil-content p {
+  font-size: 20px;
+  opacity: 0.8;
+}
+
+/* Animation d'apparition */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Bouton Commencer */
+#btnCommencer {
+  padding: 15px 40px;
+  font-size: 22px;
+  font-weight: bold;
+  color: white;
+  background: linear-gradient(45deg, #ffcc00, #ff6600);
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Effet au survol */
+#btnCommencer:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 0px 15px rgba(255, 204, 0, 0.8);
+}
+
+/* Effet lorsqu'on clique */
+#btnCommencer:active {
+  transform: scale(0.95);
+}
+
+/* ================= SECTION IDENTIFICATION ================= */
+#identification {
+  height: 100vh;
+  display: none; /* Caché au départ */
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.7); /* Fond semi-transparent */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  backdrop-filter: blur(10px); /* Effet de flou */
+  transition: opacity 1s ease-in-out;
+}
+
+.identification-content {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.2);
+}
+
+.identification-content h2 {
+  margin-bottom: 20px;
+}
+
+#formIdentification input {
+  display: block;
+  width: 80%;
+  margin: 10px auto;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+#btnValider {
+  padding: 10px 20px;
+  font-size: 18px;
+  font-weight: bold;
+  background: linear-gradient(45deg, #ff6600, #ffcc00);
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: white;
+}
+
+#btnValider:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 0px 15px rgba(255, 102, 0, 0.8);
+}
+
+/* ================= SECTION FILMS ================= */
+#films {
+  padding: 50px;
+  background: #111;
+  text-align: center;
+  display: none; /* Caché par défaut */
+}
+
+#films h2 {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+/* Carrousel Swiper */
+.swiper-container {
+  width: 90%;
+  max-width: 800px;
+  height: 350px;
+  margin: auto;
+  overflow: hidden;
+}
+
+.swiper-wrapper {
+  display: flex;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 250px;
+  height: 300px;
+  border-radius: 10px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  opacity: 0.8;
+}
+
+.swiper-slide:hover {
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+/* Style des images des films */
+.film {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.film:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.5);
+}
+
+/* Sélection du film */
+.film.selected {
+  border: 4px solid #ffcc00;
+  box-shadow: 0px 0px 15px rgba(255, 204, 0, 0.8);
+}
+
+/* Flèches de navigation Swiper */
+.swiper-button-next,
+.swiper-button-prev {
+  color: #ffcc00;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 15px;
+  border-radius: 50%;
+}
+
+/* Pagination (points sous le slide) */
+.swiper-pagination {
+  bottom: 10px;
+}
+
+/* ================= BOUTON JOUER ================= */
+#btnJouer {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 18px;
+  font-weight: bold;
+  background: linear-gradient(45deg, #ff6600, #ffcc00);
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: white;
+}
+
+/* Effet au survol */
+#btnJouer:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 0px 15px rgba(255, 102, 0, 0.8);
+}
+
+/* Désactivé par défaut */
+#btnJouer:disabled {
+  background: grey;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* Effet lorsqu'on clique */
+#btnJouer:active {
+  transform: scale(0.95);
+}
+
+.film:hover {
+  transform: rotateY(10deg) scale(1.1);
+  transition: transform 0.3s ease-out;
+}

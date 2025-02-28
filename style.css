@@ -1,0 +1,160 @@
+/* Réinitialisation */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Bangers", cursive;
+}
+
+body {
+  background-color: rgb(16, 41, 67);
+  color: white;
+  text-align: center;
+  max-height: 2500px;
+  overflow-x: hidden;
+}
+
+/* Canvas */
+#canvas1 {
+  border: 10px solid black;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgb(148, 202, 216);
+  max-width: 90%;
+  max-height: 90%;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
+  border-radius: 15px;
+  display: none;
+}
+
+/* Masquer les éléments inutiles */
+#layer0,
+#player,
+#angler1,
+#fireExplosion,
+#smokeExplosion,
+#projectile {
+  display: none;
+}
+
+/* Écran de démarrage */
+#startScreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Boîte de tutoriel */
+#tutorial {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 30px;
+  border-radius: 15px;
+  max-width: 800px;
+  width: 90%;
+  box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.3);
+}
+
+/* Boutons */
+button {
+  margin-top: 20px;
+  padding: 15px 30px;
+  font-size: 22px;
+  cursor: pointer;
+  background: linear-gradient(45deg, #ffcc00, #ff9900);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 3px 3px 10px rgba(255, 204, 0, 0.5);
+}
+#recompenseButton {
+  display: none;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+button:hover {
+  transform: scale(1.1);
+  box-shadow: 3px 3px 20px rgba(255, 204, 0, 0.8);
+}
+
+/* Spécifique au bouton Start */
+#startButton {
+  display: block;
+  font-weight: bold;
+}
+.game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 1700px;
+  margin: 0 auto;
+}
+
+/* Bouton Recommencer */
+#restartButton {
+  display: none;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Titres */
+h1 {
+  font-size: 60px;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 5px rgba(255, 204, 0, 0.8);
+}
+
+p {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  font-size: 22px;
+  margin: 10px 0;
+}
+
+/* Effet de mise en avant des objectifs */
+.objectif {
+  color: rgb(211, 168, 50);
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 40px;
+  }
+  p {
+    font-size: 22px;
+  }
+  button {
+    font-size: 18px;
+    padding: 12px 24px;
+  }
+  #tutorial {
+    padding: 20px;
+  }
+}
