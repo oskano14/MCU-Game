@@ -27,7 +27,7 @@ MCU-Game est un mini-jeu 2D interactif inspiré de l'univers du **Marvel Cinemat
 ## 📜 Règles du jeu
 1. Connectez-vous ou créez un compte.
 2. Sélectionnez un film du MCU parmi ceux disponibles.
-3. Jouez et tentez d'obtenir le meilleur score !
+3. Jouez et tentez d'obtenir votre récompense !
 
 ## 🎵 Ressources
 - Sons et musiques : [Freesound](https://freesound.org), [Zapsplat](https://www.zapsplat.com), [Mixkit](https://mixkit.co/free-sound-effects/)
