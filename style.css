@@ -27,6 +27,8 @@ body {
   box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
   border-radius: 15px;
   display: none;
+  background: url("assets/maxresdefault.jpg") repeat-x;
+  background-size: cover;
 }
 
 /* Masquer les éléments inutiles */

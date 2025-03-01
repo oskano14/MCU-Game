@@ -40,7 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (password_verify($password, $user["password"])) {
             $_SESSION["user_id"] = $user["id"];
             $_SESSION["email"] = $user["email"];
-            header("Location: game.php"); // Rediriger vers le jeu
+            header("Location: game.html"); // Rediriger vers le jeu
             exit();
         } else {
             

@@ -44,7 +44,7 @@ window.addEventListener("load", function () {
       this.game = game;
       this.x = x;
       this.y = y;
-      this.width = 40;
+      this.width = 30;
       this.height = 25;
       this.speed = 3;
       this.markedForDeletion = false;
@@ -77,9 +77,6 @@ window.addEventListener("load", function () {
       this.x += this.speedX - this.game.speed;
       if (this.x + this.width < 0) this.markedForDeletion = true;
       // sprite animation
-      if (this.frameX < this.maxFrame) {
-        this.frameX++;
-      } else this.frameX = 0;
     }
     draw(context) {
       if (this.game.debug) {
@@ -88,10 +85,7 @@ window.addEventListener("load", function () {
 
       context.drawImage(
         this.image,
-        this.frameX * this.width,
-        this.frameY * this.height,
-        this.width,
-        this.height,
+
         this.x,
         this.y,
         this.width,
@@ -110,7 +104,6 @@ window.addEventListener("load", function () {
       this.height = 169;
       this.y = Math.random() * (this.game.height * 0.9 - this.height);
       this.image = document.getElementById("angler1");
-      this.frameY = Math.floor(Math.random() * 3);
     }
   }
 
@@ -120,14 +113,15 @@ window.addEventListener("load", function () {
   class Player {
     constructor(game) {
       this.game = game;
-      this.width = 240;
-      this.height = 380;
+      this.width = 340;
+      this.height = 280;
       this.x = 20;
       this.y = 100;
       this.speedY = 0;
       this.maxSpeed = 5;
       this.projectiles = []; // Tableau des projectiles tirés
-      this.image = document.getElementById("player");
+      this.image = new Image();
+      this.image.src = "assets/capitain marvel.gif";
     }
     update() {
       // Déplacement vertical du joueur
@@ -182,8 +176,14 @@ window.addEventListener("load", function () {
       this.x -= this.game.speed * this.speedModifier;
     }
     draw(context) {
-      context.drawImage(this.image, this.x, this.y);
-      context.drawImage(this.image, this.x + this.width, this.y);
+      context.drawImage(this.image, this.x, this.y, this.width, this.height);
+      context.drawImage(
+        this.image,
+        this.x + this.width,
+        this.y,
+        this.width,
+        this.height
+      );
     }
   } // Classe Layer pour le décor à implémenter plus tard
   class Background {
@@ -271,9 +271,7 @@ window.addEventListener("load", function () {
       this.ui = new UI(this);
       this.keys = [];
       this.enemies = [];
-      this.backgroundMusic = new Audio(
-        "sons/416488__vabsounds__arcadeauto.mp3"
-      );
+      this.backgroundMusic = new Audio("sons/game-audio.mp3");
 
       this.backgroundMusic.loop = true; // Jouer en boucle
       this.backgroundMusic.volume = 0.5; // Volume réduit
@@ -286,9 +284,9 @@ window.addEventListener("load", function () {
       this.ammoInterval = 500; // Temps de recharge des munitions en ms
       this.gameOver = false;
       this.score = 0;
-      this.winningScore = 100;
+      this.winningScore = 10;
       this.gameTime = 0;
-      this.timeLimit = 120000;
+      this.timeLimit = 80000;
       this.speed = 1 + this.gameTime / 60000; // Augmente de 1 chaque minute
       this.debug = false;
     }

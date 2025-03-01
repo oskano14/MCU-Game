@@ -11,7 +11,7 @@ html {
 /* ================= PAGE D'ACCUEIL ================= */
 #accueil {
   height: 100vh;
-  background-image: url("assets/films-marvel-1400x800.jpg"); /* Remplace avec ton image */
+  background-image: url("assets/captain-marvel-new-2019-poster-vp.jpg"); /* Remplace avec ton image */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
